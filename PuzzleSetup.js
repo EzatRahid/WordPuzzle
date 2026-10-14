@@ -13,8 +13,8 @@ const wordList = [
 
 let PuzzleGrid = document.getElementById('PuzzleGrid');
 
-let GRID_COL = 10;
-let GRID_ROWS = 10;
+let GRID_COL = 15;
+let GRID_ROWS = 15;
 let TOTAL_BOXES = GRID_COL * GRID_ROWS;
 
 PuzzleGrid.style.gridTemplateColumns = `repeat(${GRID_COL},1fr)`;
@@ -56,10 +56,9 @@ const GenerateWordLayout = (arr) =>{
     for(let i = 0; i < twoDArray.length; i++){
         let startIndex = Math.floor(Math.random() * (TOTAL_BOXES - FindShortestWord(wordList)))
        
-        console.log('Iteration number: ' + i)
         for(let j = 0; j < twoDArray[i].length; j++){
             let currentBox = document.getElementById(`box-${startIndex + j}`);
-            console.log('CurrentBox index: ' + currentBox)
+            
             if(currentBox){
                 currentBox.textContent = twoDArray[i][j]
             }
